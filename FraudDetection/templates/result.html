@@ -17,14 +17,67 @@
         background-color: rgb(230, 239, 245); 
         background-image: url("{% static 'fraud/images/big.jpg'%}");
         background-repeat: no-repeat;
-        background-size: 100%
+        background-size: 100%;
+        font-family: bigparty;
+    }
+    @font-face{
+        font-family: bigparty;
+        src: url("{% static 'fraud/css/Bigparty4blue-x3W8q.ttf' %}");
+        font-weight: bold;
+    }
+    @font-face{
+        font-family: dangernight;
+        src: url("{% static 'fraud/css/DangerNightPersonalUse-owdl4.otf' %}");
+        font-weight: bold;
+    }
+    .Button{
+        font-weight : bold ;
+        font-size: 20px;
+        font-family: bigparty;
+    }
+    div{
+        margin-bottom: 10px;
+        font-weight : bold ;
+        font-size: 20px;
+        font-family: bigparty;
+    }
     }
 </style>
 <body class = 'center'>
+    {% if ans == 1 %}
+        <hr width = '100%' color = 'green' />
+        <h1 style = "color: red">Status : Fraud </h1>
+        <p class = 'Button'> Accuracy 96.9 </p>
+        <img src="{% static 'fraud/images/x.jpg' %}" alt="">
+        <div>
+            <a href="{% url 'homepage'%}">
+                Try Again
+            </a>
+        </div>
+        <hr width = '100%' color = 'green' />
+    {% elif ans == 0 %}
+        <hr width = '100%' color = 'green' />
+        <h1 style = "color: red">Status : Not Fraud </h1>
+        <p class = 'Button'> Accuracy 96.9 </p>
+        <img src="{% static 'fraud/images/ok.png' %}" alt="">
+        <div>
+            <a href="{% url 'homepage'%}">
+                Try Again
+            </a>
+        </div>
+        <hr width = '100%' color = 'green' />
+    {% else %}
+        <hr width = '100%' color = 'green' />
+        <p class = 'Button'> Incorrect input, please input integers only </p>
+        <h1 style = "color: red">Status: Error</h1>
+        <div>
+            <a href="{% url 'homepage'%}">
+                Try Again
+            </a>
+        </div>
+        <hr width = '100%' color = 'green' />
+    {% endif %}
 
-    <hr width = '100%' color = 'green' />
-    <h1 style = "color: red"> Status : {{ ans }}</h1>
-    <hr width = '100%' color = 'green' />
 
     
 </body>

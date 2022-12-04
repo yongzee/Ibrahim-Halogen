@@ -26,12 +26,7 @@ def resultpredict(request):
     data_array = np.array(lis, dtype=object)
     arr = data_array.reshape(1, -1)
     ans = cls.predict(arr)
+    print = (ans)
 
-    final_ans = ''
-    if ans == 1:
-        final_ans = 'Fraud'
-    elif ans == 0:
-        final_ans = 'Not Fraud'
-    else:
-        final_ans = 'Error'
-    return render(request, 'result.html', {'ans': final_ans})
+    
+    return render(request, 'result.html', {'ans': ans})

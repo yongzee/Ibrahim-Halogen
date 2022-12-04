@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'fraud/css/DangerNightPersonalUse-owdl4.otf' %}" type="image/gif" />
+    <link rel="icon" href="{% static 'fraud/css/Bigparty4blue-x3W8q.ttf' %}" type="image/gif" />
+      
+    
     
 
 </head>
@@ -56,6 +60,16 @@
         font-weight : normal ;
         height: 80px;
     }
+    @font-face{
+        font-family: bigparty;
+        src: url("{% static 'fraud/css/Bigparty4blue-x3W8q.ttf' %}");
+        font-weight: bold;
+    }
+    @font-face{
+        font-family: dangernight;
+        src: url("{% static 'fraud/css/DangerNightPersonalUse-owdl4.otf' %}");
+        font-weight: bold;
+    }
     label{
         display: inline-block;
         float: left;
@@ -63,10 +77,13 @@
         width: 150px;
         text-align: right;
         color: yellow;
+        
+        
     }
     input{
         display: inline-block;
         float: left;
+        color: yellow;
     }
     div{
         margin-bottom: 10px;
@@ -74,7 +91,7 @@
 
 </style>
 <body class = 'center'>
-    <h1 style = "color: blue"> Fraud Detection System </h1>
+    <h1 style = "color: blue;font-family: bigparty"> Fraud Detection System </h1>
     <form action = 'result'>
 
         {% csrf_token %}
