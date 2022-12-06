@@ -1,5 +1,5 @@
 from django.shortcuts import render
-import joblib
+import pickle
 import numpy as np
 
 # Create your views here.s
@@ -8,7 +8,7 @@ def HomePage(request):
 
 
 def resultpredict(request):
-    cls = joblib.load('fraud_model.sav')
+    cls = pickle.load(open('fraud.pkl', 'rb'))
 
     lis = []
     lis.append(request.GET['step'])
