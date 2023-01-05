@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'fraud/css/DangerNightPersonalUse-owdl4.otf' %}" type="image/gif" />
+    <link rel="icon" href="{% static 'fraud/css/Bigparty4blue-x3W8q.ttf' %}" type="image/gif" />
+      
+    
+    
+
+</head>
+<style>
+    .center {
+        position: absolute;
+        text-align: center;
+        justify-content: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url("{% static 'fraud/images/foto.jpg'%}");
+        background-repeat: no-repeat;
+        background-size: 100%
+    }
+    .fields {
+        background-color : transparent ; 
+        text-transform : uppercase ; 
+        border-radius : 0 ;
+        border : 2px solid #fff ; 
+        color : #fff ;
+        height : 45px ; 
+
+    }
+   
+    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color : #fff ;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color : #fff ;
+        opacity : 1 ;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color : #fff ;
+        opacity : 1 ;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color : #fff ;
+    }
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color : #fff ;
+    }
+    .Button{
+        text-transform : uppercase ;
+        padding : 10px 60px ;
+        spacing: 50px 60px;
+        color : white ;
+        background : #444 ;
+        font-weight : normal ;
+        height: 80px;
+    }
+    @font-face{
+        font-family: bigparty;
+        src: url("{% static 'fraud/css/Bigparty4blue-x3W8q.ttf' %}");
+        font-weight: bold;
+    }
+    @font-face{
+        font-family: dangernight;
+        src: url("{% static 'fraud/css/DangerNightPersonalUse-owdl4.otf' %}");
+        font-weight: bold;
+    }
+    label{
+        display: inline-block;
+        float: left;
+        clear: left;
+        width: 150px;
+        text-align: right;
+        color: yellow;
+        
+        
+    }
+    input{
+        display: inline-block;
+        float: left;
+        color: yellow;
+    }
+    div{
+        margin-bottom: 10px;
+    }
+
+</style>
+<body class = 'center'>
+    <h1 style = "color: blue;font-family: bigparty"> Fraud Detection System </h1>
+    <form action = 'result'>
+
+        {% csrf_token %}
+            
+           
+            <label>Step</label>
+            <input type="text" class="fields" placeholder="Step" name = 'step'>
+        
+            <label>Type</label>
+            <input type="text" class="fields" placeholder="type(1 or 0)" name = 'type'>
+
+            <label>Amount</label>
+            <input type="text" class="fields" placeholder="Amount" name = 'amount'>
+        
+            <label>Payers Old Balance</label>
+            <input type="text" class="fields" placeholder="OldbalanceOrig" name = 'oldbalanceOrig'>
+            
+            <label>Payers New Balance</label>
+            <input type="text" class="fields" placeholder="NewbalanceOrig" name = 'newbalanceOrig'>
+        
+            <label>Payees Old Balance</label>
+            <input type="text" class="fields" placeholder="OldbalanceDest" name = 'oldbalanceDest'>
+    
+            <label>Payees New Balance</label>
+            <input type="text" class="fields" placeholder="NewbalanceDest" name = 'newbalanceDest'>
+        
+            <label>Accounts Flagged Fraud</label>
+            <input type="text" class="fields" placeholder="isFlaggedFraud(1 or 0)" name = 'isFlaggedFraud'>
+        
+            <label>Payers Error Balance</label>
+            <input type="text" class="fields" placeholder="ErrorbalanceOrig" name = 'errorBalanceOrig'>
+    
+            <label>Payees Error Balance</label>
+            <input type="text" class="fields" placeholder="ErrorbalanceDest" name = 'errorBalanceDest'>
+            
+            <button type="submit" class="Button" value = 'submit'>Predict</button>
+    
+    </form>
+    
+</body>
+</html>

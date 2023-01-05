@@ -1,0 +1,1 @@
+web gunicorn HalogenProject.wsgi:application --log-file -

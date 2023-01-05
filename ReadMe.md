@@ -1,0 +1,6 @@
+Credit Card Fraud Detection System
+The model was created by stacking six models which include logistics regression, knn, xgboost, gaussianNB(naive bayes),and decision tree and performed very well with an accuracy of 99.8% and a recall of 67.8%.
+Team members include Ibrahim Baba, Isreal Adegoke, Yekeen Adebayo
+A web interface was created to showcase the efficiency of the model, these interface was created based on the datasets used in training the model, it involves step(e.g 322), type(1 0r 0) i.e transfer or cashout, amount of money, payers amount before the transaction, the payers amount after the transaction, the receivers amount before the transaction, the receivers amount after the transaction, is the transaction flagged as fraud or not(1 or 0), mean error of the payers account and finally the mean error of the receivers account, all of these is being considered in the model to determine whether the transaction is fraudulent or not.
+Note: all entries are integers only
+click on the link to access the web interface:
